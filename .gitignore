@@ -1,6 +1,5 @@
-Lab9/vivado.jou
-Lab9/vivado.log
-Lab9/vivado_20488.backup.jou
-Lab9/vivado_20488.backup.log
+Lab9/*.jou
+Lab9/*.log
+
 Lab9/vivado_pid1492.str
 Lab9/vivado_pid7604.str
