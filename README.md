@@ -8,7 +8,7 @@
 ## Contributors 
 
 - [Vidushini.A.O](https://github.com/OmalyaV)
-- [Sithum Jeewantha]
+- [Sithum Jeewantha](https://github.com/sithumjee)
 
 ## Getting Started
 
