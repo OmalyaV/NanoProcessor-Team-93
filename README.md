@@ -1,7 +1,7 @@
 # NanoProcessor-Team-93
 
 
-#### This repositary consists the cuircuit design of a Nano processor
+#### This repository consists the cuircuit design of a Nano processor
 
 
 
