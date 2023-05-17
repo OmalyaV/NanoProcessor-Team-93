@@ -35,7 +35,7 @@ entity Mux_8_to_1 is
     Port ( S : in STD_LOGIC_VECTOR (2 downto 0);
            EN : in STD_LOGIC;
            D : in STD_LOGIC_VECTOR (7 downto 0);
-           Y : out STD_LOGIC);
+           Y : out STD_LOGIC_VECTOR(3 downto 0));
 end Mux_8_to_1;
 
 architecture Behavioral of Mux_8_to_1 is
