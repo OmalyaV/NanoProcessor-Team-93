@@ -237,3 +237,5 @@ selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sourc
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, HA(Behavioral) (HA.vhd)]", 6, false, false, false, false, false, true); // B (D, ck) - Double Click
 expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RCA(Behavioral) (RCA.vhd)]", 1); // B (D, ck)
 collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RCA(Behavioral) (RCA.vhd)]", 1); // B (D, ck)
+// [GUI Memory]: 99 MB (+189kb) [00:16:47]
+// HMemoryUtils.trashcanNow. Engine heap size: 714 MB. GUI used memory: 39 MB. Current time: 5/17/23 4:41:25 PM IST
