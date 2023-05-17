@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 05/01/2023 09:53:12 PM
+-- Create Date: 05/01/2023 11:27:23 PM
 -- Design Name: 
--- Module Name: FA - Behavioral
+-- Module Name: RCA - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,30 +31,45 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity FA is
+entity RCA is
+    Port ( A :in STD_LOGIC_VECTOR(2 downto 0);
+           B: in STD_LOGIC_VECTOR(2 downto 0);
+           S : out STD_LOGIC_VECTOR(2 downto 0);
+           C_in : in STD_LOGIC;
+           C_out : out STD_LOGIC);
+end RCA;
+
+architecture Behavioral of RCA is
+COMPONENT FA
     Port ( A : in STD_LOGIC;
            B : in STD_LOGIC;
            C_in : in STD_LOGIC;
            S : out STD_LOGIC;
            C_out : out STD_LOGIC);
-end FA;
+END COMPONENT;
 
-architecture Behavioral of FA is
-COMPONENT HA
-    PORT(A : in STD_LOGIC;
-           B : in STD_LOGIC;
-           S : out STD_LOGIC;
-           C : out STD_LOGIC);
- END COMPONENT;
-SIGNAL HA0_S,HA0_C,HA1_S,HA1_C : STD_LOGIC;
+SIGNAL FA0_C ,FA1_C,FA2_C : STD_LOGIC;
+
 begin
-    HA_0: HA PORT MAP(
-        A=>A,B=>B,S=> HA0_S,C=>HA0_C);
+    FA_0: FA PORT MAP(
+        A=>A(0),
+        B=>B(0),
+        C_in=>'0',
+        S=>S(0),
+        C_out=>FA0_C);
         
-    HA_1: HA PORT MAP(
-        A=>HA0_S,B=>C_in,S=>HA1_S,C=>HA1_C);
- 
- S<= HA1_S;
- C_out <= HA1_C OR HA0_C ;
- 
- end Behavioral;
+    FA_1: FA PORT MAP(
+        A=>A(1),
+        B=>B(1),
+        C_in=>FA0_C,
+        S=>S(1),
+        C_out=>FA1_C);
+        
+    FA_2: FA PORT MAP(
+        A=>A(2),
+        B=>B(2),
+        C_in=>FA1_C,
+        S=>S(2),
+        C_out=>C_out);
+        
+end Behavioral;

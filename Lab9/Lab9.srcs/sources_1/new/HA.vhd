@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 03/15/2023 09:22:13 AM
+-- Create Date: 05/01/2023 09:41:57 PM
 -- Design Name: 
 -- Module Name: HA - Behavioral
 -- Project Name: 
@@ -39,9 +39,9 @@ entity HA is
 end HA;
 
 architecture Behavioral of HA is
-    
+
 begin
-S <= A XOR B;
-C <= A AND B;
+    S<= A XOR B;
+    C<= A AND B;
 
 end Behavioral;
