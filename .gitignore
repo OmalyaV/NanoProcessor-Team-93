@@ -5,3 +5,5 @@
 # Lab9/vivado_pid1492.str
 # Lab9/vivado_pid7604.str
 *.log
+*.jou
+*.str
