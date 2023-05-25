@@ -1,0 +1,219 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 18648
+License: Customer
+
+Current time: 	Thu May 25 15:10:11 IST 2023
+Time zone: 	India Standard Time (Asia/Colombo)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 30 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	SITHUM JEEVANTHA
+User home directory: C:/Users/SITHUM JEEVANTHA
+User working directory: C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/SITHUM JEEVANTHA/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/SITHUM JEEVANTHA/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/SITHUM JEEVANTHA/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/vivado.log
+Vivado journal file location: 	C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/vivado.jou
+Engine tmp dir: 	C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/.Xil/Vivado-18648-SITHUM-JEEVANTHA
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	171 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 569 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 62 MB (+62324kb) [00:00:06]
+// [Engine Memory]: 472 MB (+343628kb) [00:00:06]
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\SITHUM JEEVANTHA\OneDrive\Documents\GitHub\NanoProcessor-Team-93\Lab9\Lab9.xpr. Version: Vivado v2018.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.xpr} 
+// [Engine Memory]: 576 MB (+83664kb) [00:00:09]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.xpr} 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'D:/projects/NanoProcessor-Team-93/Lab9' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 595 MB. GUI used memory: 36 MB. Current time: 5/25/23 3:10:13 PM IST
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 633 MB (+30433kb) [00:00:12]
+// Project name: Lab9; location: C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 837.168 ; gain = 139.605 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// [Engine Memory]: 666 MB (+1068kb) [00:00:19]
+// Elapsed time: 25 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (ck): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (C, c)
+// F (c): Create Source File: addNotify
+// [GUI Memory]: 67 MB (+2014kb) [00:00:50]
+// [GUI Memory]: 71 MB (+1209kb) [00:01:05]
+// Elapsed time: 21 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "RCA_Adder_Subtractor"); // X (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 30 seconds
+dismissDialog("Add Sources"); // c (ck)
+// Tcl Message: close [ open {C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.srcs/sources_1/new/RCA_Adder_Subtractor.vhd} w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files {{C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.srcs/sources_1/new/RCA_Adder_Subtractor.vhd}} 
+// I (ck): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+selectButton("PAResourceAtoD.DefineModulesDialog_YOU_HAVE_MADE_CHANGES_TO_MODULE_Yes", "Yes"); // JButton (A, H)
+dismissDialog("Define Module"); // I (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 78 MB (+3488kb) [00:01:21]
+// PAPropertyPanels.initPanels (RCA_Adder_Subtractor.vhd) elapsed time: 0.2s
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RCA_Adder_Subtractor(Behavioral) (RCA_Adder_Subtractor.vhd)]", 7, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RCA_Adder_Subtractor(Behavioral) (RCA_Adder_Subtractor.vhd)]", 7, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 20 seconds
+selectCodeEditor("RCA_Adder_Subtractor.vhd", 111, 299); // ce (w, ck)
+typeControlKey((HResource) null, "RCA_Adder_Subtractor.vhd", 'v'); // ce (w, ck)
+// Elapsed time: 44 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 85 MB (+2432kb) [00:02:45]
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (ck): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (C, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 37 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "adder_3bit"); // X (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 43 seconds
+dismissDialog("Add Sources"); // c (ck)
+// Tcl Message: close [ open {C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.srcs/sources_1/new/adder_3bit.vhd} w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files {{C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.srcs/sources_1/new/adder_3bit.vhd}} 
+// I (ck): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+selectButton("PAResourceAtoD.DefineModulesDialog_YOU_HAVE_MADE_CHANGES_TO_MODULE_Yes", "Yes"); // JButton (A, H)
+dismissDialog("Define Module"); // I (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 12 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adder_3bit(Behavioral) (adder_3bit.vhd)]", 8, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adder_3bit(Behavioral) (adder_3bit.vhd)]", 8, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 22 seconds
+selectCodeEditor("adder_3bit.vhd", 144, 543); // ce (w, ck)
+typeControlKey((HResource) null, "adder_3bit.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("adder_3bit.vhd", 63, 278); // ce (w, ck)
+selectCodeEditor("adder_3bit.vhd", 63, 278, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("adder_3bit.vhd", 495, 243); // ce (w, ck)
+selectCodeEditor("adder_3bit.vhd", 104, 281); // ce (w, ck)
+selectCodeEditor("adder_3bit.vhd", 104, 281, false, false, false, false, true); // ce (w, ck) - Double Click
+typeControlKey((HResource) null, "adder_3bit.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("adder_3bit.vhd", 37, 379); // ce (w, ck)
+selectCodeEditor("adder_3bit.vhd", 37, 379, false, false, false, false, true); // ce (w, ck) - Double Click
+typeControlKey((HResource) null, "adder_3bit.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("adder_3bit.vhd", 196, 419); // ce (w, ck)
+selectCodeEditor("adder_3bit.vhd", 196, 419, false, false, false, false, true); // ce (w, ck) - Double Click
+typeControlKey((HResource) null, "adder_3bit.vhd", 'v'); // ce (w, ck)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RCA_4(Behavioral) (RCA_4.vhd)]", 2); // B (D, ck)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RCA_4(Behavioral) (RCA_4.vhd)]", 2); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RCA_4(Behavioral) (RCA_4.vhd)]", 2, true); // B (D, ck) - Node
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (ck): Remove Sources: addNotify
+selectCheckBox(PAResourceQtoS.RemoveSourcesDialog_ALSO_DELETE, "Also delete the project local file/directory from disk", true); // g (Q, aE): TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+// 'c' command handler elapsed time: 3 seconds
+dismissDialog("Remove Sources"); // aE (ck)
+// Tcl Message: export_ip_user_files -of_objects  [get_files {{C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.srcs/sources_1/new/RCA_4.vhd}}] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  {{C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.srcs/sources_1/new/RCA_4.vhd}} 
+// Tcl Message: file delete -force {C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.srcs/sources_1/new/RCA_4.vhd} 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RCA_4(Behavioral) (RCA_4.vhd)]", 2, true); // B (D, ck) - Node
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [GUI Memory]: 89 MB (+89kb) [00:07:46]
