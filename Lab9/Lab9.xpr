@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="C:/Users/SITHUM JEEVANTHA/OneDrive/Documents/GitHub/NanoProcessor-Team-93/Lab9/Lab9.xpr">
+<Project Version="7" Minor="38" Path="D:/projects/NanoProcessor-Team-93/Lab9/Lab9.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c036f6d3b11b46258ae2394c8cc98222"/>
@@ -152,6 +152,13 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/adder_3bit.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Instruction_decoder.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
