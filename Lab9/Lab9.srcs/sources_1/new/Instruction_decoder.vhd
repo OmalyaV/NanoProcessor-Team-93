@@ -58,6 +58,10 @@ if (Instruction_decoder_in(11 downto 10)= "00") then
     register_select(5 downto 3)<= Instruction_decoder_in(9 downto 7);
     register_select(2 downto 0)<= Instruction_decoder_in(6 downto 4);
 elsif (Instruction_decoder_in(11 downto 10)= "10") then
+    immidiate_value<= Instruction_decoder_in(3 downto 0);
+    register_enable <= Instruction_decoder_in(9 downto 7);
+elsif(Instruction_decoder_in(11 downto 10)= "11") then
+    
     
 end if;
 end process;
