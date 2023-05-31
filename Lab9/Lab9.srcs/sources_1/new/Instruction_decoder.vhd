@@ -61,6 +61,7 @@ elsif (Instruction_decoder_in(11 downto 10)= "10") then
     immidiate_value<= Instruction_decoder_in(3 downto 0);
     register_enable <= Instruction_decoder_in(9 downto 7);
 elsif(Instruction_decoder_in(11 downto 10)= "11") then
+    register_enable <= Instruction_decoder_in(9 downto 7);
     
     
 end if;
