@@ -35,7 +35,7 @@ entity Instruction_decoder is
     Port ( Instruction_decoder_in : in STD_LOGIC_VECTOR (11 downto 0);
            register_check_for_jump: in STD_LOGIC_VECTOR(3 downto 0);
            add_or_sub_select: out STD_LOGIC := '0';
-           register_enable: out STD_LOGIC_VECTOR(2 downto 0):= "000";
+           register_enable: out STD_LOGIC_VECTOR(2 downto 0):= (others => 'Z');
            register_select : out STD_LOGIC_VECTOR(5 downto 0):= "00000";
            immidiate_value: out STD_LOGIC_VECTOR(3 downto 0):= "0000";
            load_select: out STD_LOGIC :='0';
@@ -53,16 +53,34 @@ begin
 
 process(Instruction_decoder_in(11 downto 10))
 begin
-if (Instruction_decoder_in(11 downto 10)= "00") then
-    add_or_sub_select <= '1';
+if (Instruction_decoder_in(11 downto 10)= "00") then --ADD
+    
     register_select(5 downto 3)<= Instruction_decoder_in(9 downto 7);
     register_select(2 downto 0)<= Instruction_decoder_in(6 downto 4);
-elsif (Instruction_decoder_in(11 downto 10)= "10") then
+    add_or_sub_select <= '1';
+    register_enable <= Instruction_decoder_in(9 downto 7);
+    load_select<= '1';
+    
+elsif(Instruction_decoder_in(11 downto 10)= "01") then --NEG
+    
+    register_select(5 downto 3)<= Instruction_decoder_in(9 downto 7);
+    register_select(2 downto 0)<= (others => '0');
+    add_or_sub_select <= '1';
+    register_enable <= Instruction_decoder_in(9 downto 7);
+    load_select<= '1';
+    
+    
+    
+    
+elsif (Instruction_decoder_in(11 downto 10)= "10") then --MOVIN
     immidiate_value<= Instruction_decoder_in(3 downto 0);
     register_enable <= Instruction_decoder_in(9 downto 7);
-elsif(Instruction_decoder_in(11 downto 10)= "11") then
-    register_enable <= Instruction_decoder_in(9 downto 7);
-    
+else --JZR
+    register_select(5 downto 3) <= Instruction_decoder_in(9 downto 7);
+    if(register_check_for_jump ="0000") then
+            address_to_jump <= Instruction_decoder_in(2 downto 0);
+            jump_flag <= '1';
+        end if;
     
 end if;
 end process;
