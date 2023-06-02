@@ -48,7 +48,14 @@ entity Instruction_decoder is
 end Instruction_decoder;
 
 architecture Behavioral of Instruction_decoder is
+component Decoder_2_to_4
+Port ( I : in STD_LOGIC_VECTOR (1 downto 0);
+    EN : in STD_LOGIC;
+    Y : out STD_LOGIC_VECTOR (3 downto 0));
+end component;    
+
 signal ins_code :STD_LOGIC_VECTOR(1 downto 0);
+signal ins_no: STD_LOGIC_VECTOR(3 downto 0);
 signal reg_sel_A,reg_sel_B, reg_sel_A_ins, reg_sel_B_ins: STD_LOGIC_VECTOR(2 downto 0);
 signal reg_enable_ins, address_to_jump_ins: STD_LOGIC_VECTOR(2 downto 0);
 signal immidiate_value_ins: STD_LOGIC_VECTOR(3 downto 0);
@@ -57,12 +64,26 @@ signal immidiate_value_ins: STD_LOGIC_VECTOR(3 downto 0);
 
 begin
 
+
 ins_code<= Instruction_decoder_in(11 downto 10);
+Decoder_2_4_0: Decoder_2_to_4
+port map(
+    I => ins_code,
+    EN=> '1',
+    Y => ins_no
+);
+
+
 reg_sel_A_ins <= Instruction_decoder_in(9 downto 7); --to select the registrer A 
 reg_sel_B_ins <= Instruction_decoder_in(6 downto 4); --to select the register B
 reg_enable_ins<= Instruction_decoder_in(9 downto 7); --to enable a register in the register bank
 immidiate_value_ins <= Instruction_decoder_in(3 downto 0); -- immidiate vallue decoded from the instruction 
 address_to_jump_ins <= Instruction_decoder_in(2 downto 0);-- adress to jump when jump instruction is enable
+
+reg_sel_A <=( (others=> ins_no(0))OR (others => ins_no(1))OR (others => ins_no(3))) AND (reg_sel_A_ins);
+reg_sel_A <=(others=> ins_no(0)) AND (reg_sel_A_ins);
+
+
 process(ins_code)
 begin
 
