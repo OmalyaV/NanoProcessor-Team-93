@@ -57,16 +57,16 @@ I => S,
 EN => EN,
 Y => decoder_output_signal_3to8
 );
-MUX_data_bi_signal(3 downto 0)<=   (others => decoder_output_signal_3to8(0));
-MUX_data_bi_signal(7 downto 4)<=   (others => decoder_output_signal_3to8(1));
-MUX_data_bi_signal(11 downto 8)<=  (others => decoder_output_signal_3to8(2));
-MUX_data_bi_signal(15 downto 12)<= (others => decoder_output_signal_3to8(3));
-MUX_data_bi_signal(19 downto 16)<= (others => decoder_output_signal_3to8(4));
-MUX_data_bi_signal(23 downto 20)<= (others => decoder_output_signal_3to8(5));
-MUX_data_bi_signal(27 downto 24)<= (others => decoder_output_signal_3to8(6));
-MUX_data_bi_signal(31 downto 28)<= (others => decoder_output_signal_3to8(7));
+MUX_data_bi_signal(3 downto 0)<=   ( decoder_output_signal_3to8(0) & decoder_output_signal_3to8(0) & decoder_output_signal_3to8(0) & decoder_output_signal_3to8(0));
+MUX_data_bi_signal(7 downto 4)<=   ( decoder_output_signal_3to8(1) & decoder_output_signal_3to8(1) & decoder_output_signal_3to8(1) & decoder_output_signal_3to8(1));
+MUX_data_bi_signal(11 downto 8)<=  ( decoder_output_signal_3to8(2) & decoder_output_signal_3to8(2) & decoder_output_signal_3to8(2) & decoder_output_signal_3to8(2));
+MUX_data_bi_signal(15 downto 12)<= ( decoder_output_signal_3to8(3) & decoder_output_signal_3to8(3) & decoder_output_signal_3to8(3) & decoder_output_signal_3to8(3));
+MUX_data_bi_signal(19 downto 16)<= ( decoder_output_signal_3to8(4) & decoder_output_signal_3to8(4) & decoder_output_signal_3to8(4) & decoder_output_signal_3to8(4));
+MUX_data_bi_signal(23 downto 20)<= ( decoder_output_signal_3to8(5) & decoder_output_signal_3to8(5) & decoder_output_signal_3to8(5) & decoder_output_signal_3to8(5));
+MUX_data_bi_signal(27 downto 24)<= ( decoder_output_signal_3to8(6) & decoder_output_signal_3to8(6) & decoder_output_signal_3to8(6) & decoder_output_signal_3to8(6));
+MUX_data_bi_signal(31 downto 28)<= ( decoder_output_signal_3to8(7) & decoder_output_signal_3to8(7) & decoder_output_signal_3to8(7) & decoder_output_signal_3to8(7));
 
-MUX_enable_signal <= (others => EN);
+MUX_enable_signal <= ( EN & EN & EN & EN );
 
 MUX_output<=(
         ((MUX_data_bi_signal(3 downto 0) AND  MUX_data_bit(3 downto 0)) OR
