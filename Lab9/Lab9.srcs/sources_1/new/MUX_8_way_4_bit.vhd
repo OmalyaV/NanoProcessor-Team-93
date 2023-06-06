@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 03/22/2023 06:06:57 PM
 -- Design Name: 
--- Module Name: Mux_8_to_1 - Behavioral
+-- Module Name: Mux_8_way_4_bit - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,14 +31,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Mux_8_to_1 is
+entity Mux_8_way_4_bit is
     Port (  S : in STD_LOGIC_VECTOR (2 downto 0);
             EN : in STD_LOGIc;
             MUX_data_bit : in STD_LOGIC_VECTOR (31 downto 0);
             MUX_output : out STD_LOGIC_VECTOR(3 downto 0));
-end Mux_8_to_1;
+end Mux_8_way_4_bit;
 
-architecture Behavioral of Mux_8_to_1 is
+architecture Behavioral of Mux_8_way_4_bit is
 
 component  Decoder_3_to_8
 port(
@@ -57,16 +57,16 @@ I => S,
 EN => EN,
 Y => decoder_output_signal_3to8
 );
-MUX_data_bi_signal(3 downto 0)<=   (others => decoder_output_signal_3to8(0));
-MUX_data_bi_signal(7 downto 4)<=   (others => decoder_output_signal_3to8(1));
-MUX_data_bi_signal(11 downto 8)<=  (others => decoder_output_signal_3to8(2));
-MUX_data_bi_signal(15 downto 12)<= (others => decoder_output_signal_3to8(3));
-MUX_data_bi_signal(19 downto 16)<= (others => decoder_output_signal_3to8(4));
-MUX_data_bi_signal(23 downto 20)<= (others => decoder_output_signal_3to8(5));
-MUX_data_bi_signal(27 downto 24)<= (others => decoder_output_signal_3to8(6));
-MUX_data_bi_signal(31 downto 28)<= (others => decoder_output_signal_3to8(7));
+MUX_data_bi_signal(3 downto 0)<=   ( decoder_output_signal_3to8(0) & decoder_output_signal_3to8(0) & decoder_output_signal_3to8(0) & decoder_output_signal_3to8(0));
+MUX_data_bi_signal(7 downto 4)<=   ( decoder_output_signal_3to8(1) & decoder_output_signal_3to8(1) & decoder_output_signal_3to8(1) & decoder_output_signal_3to8(1));
+MUX_data_bi_signal(11 downto 8)<=  ( decoder_output_signal_3to8(2) & decoder_output_signal_3to8(2) & decoder_output_signal_3to8(2) & decoder_output_signal_3to8(2));
+MUX_data_bi_signal(15 downto 12)<= ( decoder_output_signal_3to8(3) & decoder_output_signal_3to8(3) & decoder_output_signal_3to8(3) & decoder_output_signal_3to8(3));
+MUX_data_bi_signal(19 downto 16)<= ( decoder_output_signal_3to8(4) & decoder_output_signal_3to8(4) & decoder_output_signal_3to8(4) & decoder_output_signal_3to8(4));
+MUX_data_bi_signal(23 downto 20)<= ( decoder_output_signal_3to8(5) & decoder_output_signal_3to8(5) & decoder_output_signal_3to8(5) & decoder_output_signal_3to8(5));
+MUX_data_bi_signal(27 downto 24)<= ( decoder_output_signal_3to8(6) & decoder_output_signal_3to8(6) & decoder_output_signal_3to8(6) & decoder_output_signal_3to8(6));
+MUX_data_bi_signal(31 downto 28)<= ( decoder_output_signal_3to8(7) & decoder_output_signal_3to8(7) & decoder_output_signal_3to8(7) & decoder_output_signal_3to8(7));
 
-MUX_enable_signal <= (others => EN);
+MUX_enable_signal <= ( EN & EN & EN & EN );
 
 MUX_output<=(
         ((MUX_data_bi_signal(3 downto 0) AND  MUX_data_bit(3 downto 0)) OR

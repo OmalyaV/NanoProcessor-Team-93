@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 05/01/2023 11:27:23 PM
+-- Create Date: 06/03/2023 11:36:46 AM
 -- Design Name: 
--- Module Name: RCA - Behavioral
+-- Module Name: RCA_Adder_Subtractor - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -35,6 +35,7 @@ entity RCA_Adder_Subtractor is
     port (  A,B: in std_logic_vector(3 downto 0);
             S: out std_logic_vector(3 downto 0);
             subtract: in std_logic;
+            Zero:out std_logic;
             C_out, overflow: out std_logic);
     end RCA_Adder_Subtractor;
     
@@ -47,12 +48,13 @@ end component;
 
 signal C: std_logic_vector(4 downto 0);
 signal B_temp: std_logic_vector(3 downto 0);
-
+signal S_temp: std_logic_vector(3 downto 0);
 begin
         
 C(0) <= subtract;
 C_out <= C(4);
 overflow <= C(4) xor C(3);
+zero<=NOT(S_temp(0) OR S_temp(1) OR S_temp(2) OR S_temp(3));
 
 B_temp(0) <= B(0) xor subtract;
 B_temp(1) <= B(1) xor subtract;
@@ -63,29 +65,29 @@ FA_0: FA port map(
         C_in=>C(0),
         A=>A(0),
         B=>B_temp(0),
-        S=>S(0),
+        S=>S_temp(0),
         C_out=>C(1));
         
 FA_1: FA port map(
         C_in=>C(1),
         A=>A(1),
         B=>B_temp(1),
-        S=>S(1),
+        S=>S_temp(1),
         C_out=>C(2));
         
 FA_2: FA port map(
         C_in=>C(2),
         A=>A(2),
         B=>B_temp(2),
-        S=>S(2),
+        S=>S_temp(2),
         C_out=>C(3));
         
 FA_3: FA port map(
         C_in=>C(3),
         A=>A(3),
         B=>B_temp(3),
-        S=>S(3),
+        S=>S_temp(3),
         C_out=>C(4));
- 
+S<=S_temp; 
         
 end Behavioral;

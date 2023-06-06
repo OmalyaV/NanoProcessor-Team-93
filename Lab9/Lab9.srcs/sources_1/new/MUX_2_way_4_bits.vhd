@@ -55,9 +55,9 @@ Decoder_1_to_2_IN => MUX_2_way_4_bit_controls,
 EN_decoder_1_to_2  => MUX_2_way_4_bit_EN,
 Decoder_1_to_2_OUT  => Decoder_output_signal_1to2
 );
-MUX_enable_signal_2way4bit(3 downto 0) <= (others => MUX_2_way_4_bit_EN);
-MUX_data_bit_signal_2way4bit(3 downto 0)<= (others=> Decoder_output_signal_1to2(0));
-MUX_data_bit_signal_2way4bit(7 downto 4)<= (others=> Decoder_output_signal_1to2(1));
+MUX_enable_signal_2way4bit(3 downto 0) <= ( MUX_2_way_4_bit_EN &MUX_2_way_4_bit_EN &MUX_2_way_4_bit_EN&MUX_2_way_4_bit_EN);
+MUX_data_bit_signal_2way4bit(3 downto 0)<= (Decoder_output_signal_1to2(0)& Decoder_output_signal_1to2(0)&Decoder_output_signal_1to2(0)&Decoder_output_signal_1to2(0));
+MUX_data_bit_signal_2way4bit(7 downto 4)<= ( Decoder_output_signal_1to2(1)&Decoder_output_signal_1to2(1)&Decoder_output_signal_1to2(1)&Decoder_output_signal_1to2(1));
 
 MUX_2_way_4_bit_OUT <= (
    ( MUX_data_bit_signal_2way4bit(3 downto 0) AND MUX_2_way_4_bit_DATA(3 downto 0)) OR
