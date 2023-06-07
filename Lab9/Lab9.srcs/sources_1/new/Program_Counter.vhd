@@ -39,16 +39,20 @@ Port ( Clk : in STD_LOGIC;
 end Program_Counter;
 
 architecture Behavioral of Program_Counter is
+signal Q_temp:std_logic_vector( 2 downto 0);
 
 begin
+
 process(Clk) begin
 if(rising_edge(Clk)) then
     if(Reset ='1') then
-        Q <= "000";
+        Q_temp <= "000";
     else
-        Q <= D;
+        Q_temp <= D;
     end if;
 end if;
+
+Q<=Q_temp;
 end process;
 
 

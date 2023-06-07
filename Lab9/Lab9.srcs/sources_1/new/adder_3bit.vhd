@@ -36,7 +36,7 @@ entity adder_3bit is
     Port ( A :in STD_LOGIC_VECTOR(2 downto 0);
            B: in STD_LOGIC_VECTOR(2 downto 0);
            S : out STD_LOGIC_VECTOR(2 downto 0);
-           C_in : in STD_LOGIC;
+           C_in : in STD_LOGIC:= '0' ;
            C_out : out STD_LOGIC);
 end adder_3bit;
 

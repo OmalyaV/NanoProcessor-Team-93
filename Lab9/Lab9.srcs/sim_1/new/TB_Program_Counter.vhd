@@ -43,14 +43,14 @@ component Program_Counter
            Q : out STD_LOGIC_VECTOR (2 downto 0));
 end component;
 signal Clk,Reset: std_logic;
-signal D,Q:  STD_LOGIC_VECTOR (3 downto 0);
+signal D,Q:  STD_LOGIC_VECTOR (2 downto 0);
 
 begin
     UUT: Program_Counter port map(
         Clk=>Clk,Reset=>Reset,Q=>Q,D=>D);
 process
 begin
-     Clk <= '0';
+   Clk <= '0';
    wait for 10 ns;
    Clk <= '1';
    wait for 10 ns;

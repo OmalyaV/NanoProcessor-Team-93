@@ -58,13 +58,17 @@ begin
     B<="0011";
     wait for 100 ns;
     
-     A<="1111";
-     B<="1111";
-     wait for 100 ns;
+    A<="0000";
+    B<="0000";
+    wait for 100 ns;
     
     subtract<='1';
     A<="1110";
     B<="0011";
-    wait ;
+    wait for 100 ns; 
+    
+     A<="0000";
+     B<="0000";
+     wait ;
 end process;
 end Behavioral;

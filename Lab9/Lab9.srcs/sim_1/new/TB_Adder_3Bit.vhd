@@ -53,6 +53,7 @@ begin
 
 process
 begin
+   C_in<='0';
    A<="101";
    B<="001";
    wait for 100 ns;

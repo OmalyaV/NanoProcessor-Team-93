@@ -90,7 +90,7 @@ begin
     Reg3 : Registers
     port map(
         D => Register_input,
-        EN => MuxSignal(3) ,
+        EN => '1' ,
         Clk => Clk,
         Reset => Reset,
         Q =>register3 
@@ -99,7 +99,7 @@ begin
     Reg4 : Registers
     port map(
         D => Register_input,
-        EN => MuxSignal(4),
+        EN => '1' ,
         Clk => Clk,
         Reset => Reset,
         Q => register4
@@ -108,7 +108,7 @@ begin
     Reg5 :Registers
     port map(
         D => Register_input,
-        EN => MuxSignal(5),
+        EN => '1' ,
         Clk => Clk,
         Reset => Reset,
         Q => register5
@@ -117,7 +117,7 @@ begin
     Reg6 : Registers
     port map(
         D => Register_input,
-        EN => MuxSignal(6),
+        EN => '1' ,
         Clk => Clk,
         Reset => Reset,
         Q =>register6
@@ -126,7 +126,7 @@ begin
     Reg7 : Registers
     port map(
         D => Register_input,
-        EN => MuxSignal(7),
+       EN => '1' ,
         Clk => Clk,
         Reset => Reset,
         Q =>register7

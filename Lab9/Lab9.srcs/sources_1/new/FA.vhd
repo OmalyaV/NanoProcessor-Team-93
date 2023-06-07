@@ -58,10 +58,10 @@ HA_0 : HA
  C => HA0_C); 
  HA_1 : HA 
  port map ( 
- A => HA0_S, 
- B => C_in, 
- S => HA1_S, 
- C => HA1_C);
+     A => HA0_S, 
+     B => C_in, 
+     S => HA1_S, 
+     C => HA1_C);
 
 S <= HA1_S;
 C_out <= HA1_C OR HA0_C;
