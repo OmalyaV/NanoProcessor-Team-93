@@ -34,9 +34,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Register_Bank is
        Port ( Clk : in STD_LOGIC;
           Reset : in STD_LOGIC;
-          MuxInput:  in STD_LOGIC_VECTOR (2 downto 0);
+          Register_enable : in STD_LOGIC_VECTOR(2 downto 0);
           Register_input : in STD_LOGIC_VECTOR (3 downto 0);
-          MuxOutput : out STD_LOGIC_VECTOR(7 downto 0);
           register0 : out STD_LOGIC_VECTOR(3 downto 0);
           register1 : out STD_LOGIC_VECTOR(3 downto 0);
           register2 : out STD_LOGIC_VECTOR(3 downto 0);
@@ -67,6 +66,14 @@ signal Y : STD_LOGIC_VECTOR(7 downto 0);
 signal MuxSignal:STD_LOGIC_VECTOR(7 downto 0);
 
 begin
+    Decoder : Decoder_3_to_8
+    port map(
+        I => Register_enable,
+        EN => '1',
+        Y => Y
+    );
+    
+    MuxSignal<=Y;
 
     register0<="0000";
     Reg1 : Registers
@@ -90,7 +97,7 @@ begin
     Reg3 : Registers
     port map(
         D => Register_input,
-        EN => '1' ,
+        EN => MuxSignal(3) ,
         Clk => Clk,
         Reset => Reset,
         Q =>register3 
@@ -99,7 +106,7 @@ begin
     Reg4 : Registers
     port map(
         D => Register_input,
-        EN => '1' ,
+        EN => MuxSignal(4) ,
         Clk => Clk,
         Reset => Reset,
         Q => register4
@@ -108,7 +115,7 @@ begin
     Reg5 :Registers
     port map(
         D => Register_input,
-        EN => '1' ,
+        EN => MuxSignal(5) ,
         Clk => Clk,
         Reset => Reset,
         Q => register5
@@ -117,7 +124,7 @@ begin
     Reg6 : Registers
     port map(
         D => Register_input,
-        EN => '1' ,
+        EN => MuxSignal(6) ,
         Clk => Clk,
         Reset => Reset,
         Q =>register6
@@ -126,20 +133,13 @@ begin
     Reg7 : Registers
     port map(
         D => Register_input,
-       EN => '1' ,
+        EN => MuxSignal(7) ,
         Clk => Clk,
         Reset => Reset,
         Q =>register7
     );
     
-    Decoder : Decoder_3_to_8
-    port map(
-        I => MuxInput,
-        EN => '1',
-        Y => Y
-    );
     
-    MuxSignal<=Y;
-    MuxOutput<=MuxSignal;
+    
 
 end Behavioral;
