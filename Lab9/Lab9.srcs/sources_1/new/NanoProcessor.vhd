@@ -140,11 +140,34 @@ signal MUX_2_way_3_bit_OUT : STD_LOGIC_VECTOR(2 downto 0);-- 2 way 3 bit mux, pc
 signal Adder_3_bit_out: STD_LOGIC_VECTOR(2 downto 0); -- 3 bit adder, 2 way 3 bit mux
 signal Clock_out :STD_LOGIC;
 signal Instructions: STD_LOGIC_VECTOR(11 downto 0); -- ROM, ins decoder
-
+signal MUX_input_register_Bank :STD_LOGIC_VECTOR( 3 downto 0); -- Register bank, 2 way 4 bit mux
 
 begin
+Slow_clk_0: Slow_Clk Port map(
+    Clk_in => clock,
+    Clk_out => Clock_out
+);
+Instruction_decoder_0: Instruction_decoder Port map(
+    Instruction_decoder_in => Instructions,
+    register_check_for_jump =>Register_A_out,
+    add_or_sub_select => Add_sub_select,
+    register_enable => Register_enable_signal,
+    register_select(5 downto 3) =>Register_select_A,
+    register_select(2 downto 0) => Register_select_B,
+    immidiate_value => Immidiate_value,
+    load_select => Load_select,
+    jump_flag => Jump_flag_signal,
+    address_to_jump => Address_to_jump
+    
+);
+Register_Bank_0 : Register_Bank Port map(
+    Clk =>Clock_out,
+    Reset => reset,
+    MuxInput => MUX_input_register_Bank,
+    Register_input => Register_enable_signal,
+    
 
-
+);
 
 
 

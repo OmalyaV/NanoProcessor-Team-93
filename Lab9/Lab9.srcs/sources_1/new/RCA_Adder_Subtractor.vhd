@@ -90,5 +90,5 @@ FA_3: FA port map(
 S<=S_temp; 
 overflow <= C(4) xor C(3);
 zero<=NOT(S_temp(0) OR S_temp(1) OR S_temp(2) OR S_temp(3));
-        
+
 end Behavioral;
