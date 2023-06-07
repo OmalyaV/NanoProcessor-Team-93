@@ -53,8 +53,7 @@ begin
         
 C(0) <= subtract;
 C_out <= C(4);
-overflow <= C(4) xor C(3);
-zero<=NOT(S_temp(0) OR S_temp(1) OR S_temp(2) OR S_temp(3));
+
 
 B_temp(0) <= B(0) xor subtract;
 B_temp(1) <= B(1) xor subtract;
@@ -89,5 +88,7 @@ FA_3: FA port map(
         S=>S_temp(3),
         C_out=>C(4));
 S<=S_temp; 
+overflow <= C(4) xor C(3);
+zero<=NOT(S_temp(0) OR S_temp(1) OR S_temp(2) OR S_temp(3));
         
 end Behavioral;
