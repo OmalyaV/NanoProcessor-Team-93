@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 05/03/2023 09:51:43 AM
 -- Design Name: 
--- Module Name: ROM - Behavioral
+-- Module Name: LUT_16_7 - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
