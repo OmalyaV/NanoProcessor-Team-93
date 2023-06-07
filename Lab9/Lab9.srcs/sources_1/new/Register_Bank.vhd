@@ -34,7 +34,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Register_Bank is
        Port ( Clk : in STD_LOGIC;
           Reset : in STD_LOGIC;
-          EN : in STD_LOGIC;
           MuxInput:  in STD_LOGIC_VECTOR (2 downto 0);
           Register_input : in STD_LOGIC_VECTOR (3 downto 0);
           MuxOutput : out STD_LOGIC_VECTOR(7 downto 0);

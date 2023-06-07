@@ -35,7 +35,7 @@ use ieee.numeric_std.all;
 entity ROM is
     Port ( address : in STD_LOGIC_VECTOR (3 downto 0);
            
-           data : out STD_LOGIC_VECTOR (11 downto 0));
+           ins : out STD_LOGIC_VECTOR (11 downto 0));
 end ROM;
 
 architecture Behavioral of ROM is
@@ -54,6 +54,6 @@ type rom_type is array (0 to 7) of std_logic_vector(11 downto 0);
  );
 
 begin
-data <= sevenSegment_ROM(to_integer(unsigned(address)));
+ins <= sevenSegment_ROM(to_integer(unsigned(address)));
 
 end Behavioral;

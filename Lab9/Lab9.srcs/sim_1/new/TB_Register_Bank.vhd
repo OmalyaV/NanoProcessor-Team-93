@@ -76,8 +76,7 @@ end process;
 process 
 begin
     
-    wait for 150ns;
-    EN <= '1';
+    Reset <= '0';
     MuxInput <= "000";
     Reset <= '1';
     wait for 150ns;
