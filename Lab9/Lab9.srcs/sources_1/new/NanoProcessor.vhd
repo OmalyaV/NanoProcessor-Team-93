@@ -64,9 +64,8 @@ end component;
 component Register_Bank
 Port ( Clk : in STD_LOGIC;
           Reset : in STD_LOGIC;
-          MuxInput:  in STD_LOGIC_VECTOR (2 downto 0);
+          Register_enable : in STD_LOGIC_VECTOR(2 downto 0);
           Register_input : in STD_LOGIC_VECTOR (3 downto 0);
-          MuxOutput : out STD_LOGIC_VECTOR(7 downto 0);
           register0 : out STD_LOGIC_VECTOR(3 downto 0);
           register1 : out STD_LOGIC_VECTOR(3 downto 0);
           register2 : out STD_LOGIC_VECTOR(3 downto 0);
@@ -140,7 +139,7 @@ signal MUX_2_way_3_bit_OUT : STD_LOGIC_VECTOR(2 downto 0);-- 2 way 3 bit mux, pc
 signal Adder_3_bit_out: STD_LOGIC_VECTOR(2 downto 0); -- 3 bit adder, 2 way 3 bit mux
 signal Clock_out :STD_LOGIC;
 signal Instructions: STD_LOGIC_VECTOR(11 downto 0); -- ROM, ins decoder
-signal MUX_input_register_Bank :STD_LOGIC_VECTOR( 3 downto 0); -- Register bank, 2 way 4 bit mux
+signal MUX_output_register_Bank :STD_LOGIC_VECTOR( 3 downto 0); -- Register bank, 2 way 4 bit mux
 
 begin
 Slow_clk_0: Slow_Clk Port map(
@@ -163,10 +162,31 @@ Instruction_decoder_0: Instruction_decoder Port map(
 Register_Bank_0 : Register_Bank Port map(
     Clk =>Clock_out,
     Reset => reset,
-    MuxInput => MUX_input_register_Bank,
-    Register_input => Register_enable_signal,
+    Register_enable => Register_enable_signal,
+    Register_input => MUX_output_register_Bank,
+    register0 => Data_bus_0,
+    register1 => Data_bus_1,
+    register2 => Data_bus_2,
+    register3 => Data_bus_3,
+    register4 => Data_bus_4,
+    register5 => Data_bus_5,
+    register6 => Data_bus_6,
+    register7 => Data_bus_7
     
+    
+);
+ROM_0 :ROM Port map(
+    address => Memory_select,
+    ins =>Instructions
+);
 
+RCA_Adder_Subtractor_0 :RCA_Adder_Subtractor port map(
+    A=> Register_A_out,
+    B=> Register_B_out,
+    subtract =>Add_sub_select,
+    S => Adder_out,
+    Zero => Zero,
+    overflow => overflow
 );
 
 
