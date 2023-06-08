@@ -189,7 +189,62 @@ RCA_Adder_Subtractor_0 :RCA_Adder_Subtractor port map(
     overflow => overflow
 );
 
+adder_3bit_0 : adder_3bit port map(
+    A=> Memory_select,
+    B => "001",
+    S => Adder_3_bit_out,
+    C_in => '0'
+    
+);
 
+MUX_2_way_3_bit_0 :MUX_2_way_3_bit port map(
+    MUX_2_way_3_bit_DATA(5 downto 3) => Address_to_jump,
+    MUX_2_way_3_bit_DATA(2 downto 0) => Adder_3_bit_out,
+    MUX_2_way_3_bit_controls => Jump_flag_signal,
+    MUX_2_way_3_bit_EN => '1',
+    MUX_2_way_3_bit_OUT => MUX_2_way_3_bit_OUT
+    
+);
+
+MUX_8_way_4_bit_0 :MUX_8_way_4_bit port map(
+    S => Register_select_A,
+    EN =>'1',
+    MUX_data_bit(3 downto 0) =>Data_bus_0,
+    MUX_data_bit(7 downto 4) =>Data_bus_1,
+    MUX_data_bit(11 downto 8) =>Data_bus_2,
+    MUX_data_bit(15 downto 12) =>Data_bus_3,
+    MUX_data_bit(19 downto 16) =>Data_bus_4,
+    MUX_data_bit(23 downto 20) =>Data_bus_5,
+    MUX_data_bit(27 downto 24) =>Data_bus_6,
+    MUX_data_bit(31 downto 27) =>Data_bus_7,
+    MUX_output => Register_select_A
+    
+    
+);
+MUX_8_way_4_bit_1 :MUX_8_way_4_bit port map(
+    S => Register_select_B,
+    EN =>'1',
+    MUX_data_bit(3 downto 0) =>Data_bus_0,
+    MUX_data_bit(7 downto 4) =>Data_bus_1,
+    MUX_data_bit(11 downto 8) =>Data_bus_2,
+    MUX_data_bit(15 downto 12) =>Data_bus_3,
+    MUX_data_bit(19 downto 16) =>Data_bus_4,
+    MUX_data_bit(23 downto 20) =>Data_bus_5,
+    MUX_data_bit(27 downto 24) =>Data_bus_6,
+    MUX_data_bit(31 downto 27) =>Data_bus_7,
+    MUX_output => Register_select_B
+    
+    
+);
+
+MUX_2_way_4_bit_0 : MUX_2_way_4_bit port map
+(
+    MUX_2_way_4_bit_DATA(7 downto 4) => Adder_out,
+    MUX_2_way_4_bit_DATA(3 downto 0) =>immidiate_value,
+    MUX_2_way_4_bit_controls => Load_select,
+    MUX_2_way_4_bit_EN => '1',
+    MUX_2_way_4_bit_OUT =>MUX_output_register_Bank
+);
 
 
 end Behavioral;

@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 06/06/2023 01:58:59 PM
--- Design Name: 
--- Module Name: TB_Program_Counter - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -45,9 +24,13 @@ end component;
 signal Clk,Reset: std_logic;
 signal D,Q:  STD_LOGIC_VECTOR (2 downto 0);
 
+
 begin
     UUT: Program_Counter port map(
-        Clk=>Clk,Reset=>Reset,Q=>Q,D=>D);
+        Clk=>Clk,
+        Reset=>Reset,
+        Q=>Q,
+        D=>D);
 process
 begin
    Clk <= '0';
@@ -72,5 +55,3 @@ begin
     Reset <= '1';
     wait;
 end process;
-
-end Behavioral;
