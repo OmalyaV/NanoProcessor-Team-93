@@ -1,0 +1,12 @@
+
+{ 
+    crc :  3717528624420763106  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto c036f6d3b11b46258ae2394c8cc98222 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot TB_MUX_2_way_3_bit_behav xil_defaultlib.TB_MUX_2_way_3_bit" , 
+    buildDate : "Jun 14 2018" , 
+    buildTime : "20:41:02" , 
+    linkCmd : "D:\\Vivado\\2018.2\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/TB_MUX_2_way_3_bit_behav/xsimk.exe\"   \"xsim.dir/TB_MUX_2_way_3_bit_behav/obj/xsim_0.win64.obj\" \"xsim.dir/TB_MUX_2_way_3_bit_behav/obj/xsim_1.win64.obj\" \"D:\\Vivado\\2018.2\\lib\\win64.o\\\\librdi_simulator_kernel.dll\"  \"D:\\Vivado\\2018.2\\lib\\win64.o\\\\librdi_simbridge_kernel.dll\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
