@@ -35,7 +35,7 @@ entity Instruction_decoder is
     Port ( Instruction_decoder_in : in STD_LOGIC_VECTOR (11 downto 0);
            register_check_for_jump: in STD_LOGIC_VECTOR(3 downto 0);
            add_or_sub_select: out STD_LOGIC := '0';
-           register_enable: out STD_LOGIC_VECTOR(2 downto 0):= (others => 'Z');
+           register_enable: out STD_LOGIC_VECTOR(2 downto 0):= "000";
            register_select : out STD_LOGIC_VECTOR(5 downto 0):= "000000";
            immidiate_value: out STD_LOGIC_VECTOR(3 downto 0):= "0000";
            load_select: out STD_LOGIC :='0';

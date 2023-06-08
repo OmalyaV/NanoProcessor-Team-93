@@ -40,6 +40,19 @@ entity NanoProcessor is
     reg_7_out:out std_logic_vector(3 downto 0);
     reg_7_seven_seg :out std_logic_vector(6 downto 0);
     anode: out STD_LOGIC_VECTOR(3 downto 0)
+    
+    --register_0: out STD_LOGIC_VECTOR(3 downto 0);
+    --register_1: out STD_LOGIC_VECTOR(3 downto 0);
+    --register_2: out STD_LOGIC_VECTOR(3 downto 0);
+    --register_3: out STD_LOGIC_VECTOR(3 downto 0);
+    --register_4: out STD_LOGIC_VECTOR(3 downto 0);
+    --register_5: out STD_LOGIC_VECTOR(3 downto 0);
+    --register_6: out STD_LOGIC_VECTOR(3 downto 0);
+    --register_7: out STD_LOGIC_VECTOR(3 downto 0);
+    --current_ins : out STD_LOGIC_VECTOR(11 downto 0);
+    --adder_3_bit_out_sim : out STD_LOGIC_VECTOR(2 downto 0);
+    --memory_select_out_sim: out STD_LOGIC_VECTOR(2 downto 0);
+    --test_out : out std_LOGIC_vector(2 downto 0)
  );
 
 end NanoProcessor;
@@ -132,22 +145,22 @@ Port ( address : in STD_LOGIC_VECTOR (3 downto 0);
            data : out STD_LOGIC_VECTOR (6 downto 0));
 end component;
 
-signal Register_enable_signal : STD_LOGIC_VECTOR(2 downto 0);--instruction decoder , register bank
-signal Data_bus_0, Data_bus_1, Data_bus_2,Data_bus_3,Data_bus_4,Data_bus_5,Data_bus_6,Data_bus_7:STD_LOGIC_VECTOR(3 downto 0); --register_bank, muxes
-signal Register_select_A, Register_select_B :STD_LOGIC_VECTOR(2 downto 0); --instruction decoder, mux
-signal Register_A_out, Register_B_out: STD_LOGIC_VECTOR(3 downto 0);--muxes, adder_subtractor
-signal Adder_out: STD_LOGIC_VECTOR(3 downto 0);--adder_subtractor, 2 way4 bit mux
-signal Load_select : STD_LOGIC; -- ins_decoder, 2 way 4 bit mux
-signal Immidiate_value :STD_LOGIC_VECTOR(3 downto 0); --ins_decoder, 2way 4 bit mux
-signal Add_sub_select:STD_LOGIC; --adder_subtracor, ins decoder
-signal Jump_flag_signal: STD_LOGIC; -- ins_decoder, 2 way 3 bit mux
-signal Address_to_jump: STD_LOGIC_VECTOR(2 downto 0); -- ins_decoder, 2 way_3bit mux
-signal Memory_select: STD_LOGIC_VECTOR(2 downto 0);--ROM, PC , 3 bitadder
-signal MUX_2_way_3_bit_OUT : STD_LOGIC_VECTOR(2 downto 0);-- 2 way 3 bit mux, pc
-signal Adder_3_bit_out: STD_LOGIC_VECTOR(2 downto 0); -- 3 bit adder, 2 way 3 bit mux
-signal Clock_out :STD_LOGIC;
-signal Instructions: STD_LOGIC_VECTOR(11 downto 0); -- ROM, ins decoder
-signal MUX_output_register_Bank :STD_LOGIC_VECTOR( 3 downto 0); -- Register bank, 2 way 4 bit mux
+signal Register_enable_signal : STD_LOGIC_VECTOR(2 downto 0):="000";--instruction decoder , register bank
+signal Data_bus_0, Data_bus_1, Data_bus_2,Data_bus_3,Data_bus_4,Data_bus_5,Data_bus_6,Data_bus_7:STD_LOGIC_VECTOR(3 downto 0):="0000"; --register_bank, muxes
+signal Register_select_A, Register_select_B :STD_LOGIC_VECTOR(2 downto 0):="000"; --instruction decoder, mux
+signal Register_A_out, Register_B_out: STD_LOGIC_VECTOR(3 downto 0):="0000";--muxes, adder_subtractor
+signal Adder_out: STD_LOGIC_VECTOR(3 downto 0):= "0000";--adder_subtractor, 2 way4 bit mux
+signal Load_select : STD_LOGIC:= '0'; -- ins_decoder, 2 way 4 bit mux
+signal Immidiate_value :STD_LOGIC_VECTOR(3 downto 0):= "0000"; --ins_decoder, 2way 4 bit mux
+signal Add_sub_select:STD_LOGIC:= '0'; --adder_subtracor, ins decoder
+signal Jump_flag_signal: STD_LOGIC:= '0'; -- ins_decoder, 2 way 3 bit mux
+signal Address_to_jump: STD_LOGIC_VECTOR(2 downto 0):="000"; -- ins_decoder, 2 way_3bit mux
+signal Memory_select: STD_LOGIC_VECTOR(2 downto 0):="000";--ROM, PC , 3 bitadder
+signal MUX_2_way_3_bit_OUT : STD_LOGIC_VECTOR(2 downto 0):="000";-- 2 way 3 bit mux, pc
+signal Adder_3_bit_out: STD_LOGIC_VECTOR(2 downto 0):="000"; -- 3 bit adder, 2 way 3 bit mux
+signal Clock_out :STD_LOGIC:= '0';
+signal Instructions: STD_LOGIC_VECTOR(11 downto 0):="000000000000"; -- ROM, ins decoder
+signal MUX_output_register_Bank :STD_LOGIC_VECTOR( 3 downto 0):="0000"; -- Register bank, 2 way 4 bit mux
 
 begin
 Slow_clk_0: Slow_Clk Port map(
@@ -270,4 +283,17 @@ LUT_16_7_0 :LUT_16_7 port map
 
 reg_7_out <= Data_bus_7;
 anode <= "1110";
+--register_0 <= Data_bus_0;
+--register_1 <= Data_bus_1;
+--register_2 <= Data_bus_2;
+--register_3 <= Data_bus_3;
+--register_4 <= Data_bus_4;
+--register_5 <= Data_bus_5;
+--register_6 <= Data_bus_6;
+--register_7 <= Data_bus_7;
+--current_ins <= Instructions;
+--adder_3_bit_out_sim<= Adder_3_bit_out;
+
+--test_out <= "000";
+--memory_select_out_sim <= Memory_select;
 end Behavioral;

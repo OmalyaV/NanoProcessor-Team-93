@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 06/06/2023 01:54:06 PM
+-- Create Date: 06/08/2023 04:55:13 PM
 -- Design Name: 
--- Module Name: Program_Counter - Behavioral
+-- Module Name: TB_adder_3_bit - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,29 +31,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Program_Counter is
-Port ( Clk : in STD_LOGIC:='0';
-           Reset : in STD_LOGIC:='0';
-           D : in STD_LOGIC_VECTOR (2 downto 0):= "000";
-           Q : out STD_LOGIC_VECTOR (2 downto 0):="000");
-end Program_Counter;
+entity TB_adder_3_bit is
+--  Port ( );
+end TB_adder_3_bit;
 
-architecture Behavioral of Program_Counter is
-
+architecture Behavioral of TB_adder_3_bit is
+component adder_3bit
+Port ( A :in STD_LOGIC_VECTOR(2 downto 0);
+       B: in STD_LOGIC_VECTOR(2 downto 0);
+       S : out STD_LOGIC_VECTOR(2 downto 0);
+       C_in : in STD_LOGIC:= '0' ;
+       C_out : out STD_LOGIC);
+ end component;
+ 
+ 
 
 begin
-
-process(Clk) begin
-if(rising_edge(Clk)) then
-    if(Reset ='1') then
-        Q <= "000";
-    else
-        Q <= D;
-    end if;
-end if;
-
-
-end process;
 
 
 end Behavioral;

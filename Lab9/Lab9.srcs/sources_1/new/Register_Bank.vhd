@@ -36,14 +36,14 @@ entity Register_Bank is
           Reset : in STD_LOGIC;
           Register_enable : in STD_LOGIC_VECTOR(2 downto 0);
           Register_input : in STD_LOGIC_VECTOR (3 downto 0);
-          register0 : out STD_LOGIC_VECTOR(3 downto 0);
-          register1 : out STD_LOGIC_VECTOR(3 downto 0);
-          register2 : out STD_LOGIC_VECTOR(3 downto 0);
-          register3 : out STD_LOGIC_VECTOR(3 downto 0);
-          register4 : out STD_LOGIC_VECTOR(3 downto 0);
-          register5 : out STD_LOGIC_VECTOR(3 downto 0);
-          register6 : out STD_LOGIC_VECTOR(3 downto 0);
-          register7 : out STD_LOGIC_VECTOR(3 downto 0));
+          register0 : out STD_LOGIC_VECTOR(3 downto 0):="0000";
+          register1 : out STD_LOGIC_VECTOR(3 downto 0):="0000";
+          register2 : out STD_LOGIC_VECTOR(3 downto 0):="0000";
+          register3 : out STD_LOGIC_VECTOR(3 downto 0):="0000";
+          register4 : out STD_LOGIC_VECTOR(3 downto 0):="0000";
+          register5 : out STD_LOGIC_VECTOR(3 downto 0):="0000";
+          register6 : out STD_LOGIC_VECTOR(3 downto 0):="0000";
+          register7 : out STD_LOGIC_VECTOR(3 downto 0):="0000");
           
 end Register_Bank;
 
