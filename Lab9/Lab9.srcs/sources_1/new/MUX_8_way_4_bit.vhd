@@ -70,13 +70,13 @@ MUX_enable_signal <= ( EN & EN & EN & EN );
 
 MUX_output<=(
         ((MUX_data_bi_signal(3 downto 0) AND  MUX_data_bit(3 downto 0)) OR
-        (MUX_data_bi_signal(7 downto 4)  AND  MUX_data_bit(3 downto 0)) OR
-        (MUX_data_bi_signal(11 downto 8) AND  MUX_data_bit(3 downto 0)) OR
-        (MUX_data_bi_signal(15 downto 12) AND  MUX_data_bit(3 downto 0)) OR
-        (MUX_data_bi_signal(19 downto 16)AND  MUX_data_bit(3 downto 0)) OR
-        (MUX_data_bi_signal(23 downto 20)AND  MUX_data_bit(3 downto 0)) OR
-        (MUX_data_bi_signal(27 downto 24) AND  MUX_data_bit(3 downto 0)) OR
-        (MUX_data_bi_signal(31 downto 28) AND  MUX_data_bit(3 downto 0)) ) AND MUX_enable_signal
+        (MUX_data_bi_signal(7 downto 4)  AND  MUX_data_bit(7 downto 4)) OR
+        (MUX_data_bi_signal(11 downto 8) AND  MUX_data_bit(11 downto 8)) OR
+        (MUX_data_bi_signal(15 downto 12) AND  MUX_data_bit(15 downto 12)) OR
+        (MUX_data_bi_signal(19 downto 16)AND  MUX_data_bit(19 downto 16)) OR
+        (MUX_data_bi_signal(23 downto 20)AND  MUX_data_bit(23 downto 20)) OR
+        (MUX_data_bi_signal(27 downto 24) AND  MUX_data_bit(27 downto 24)) OR
+        (MUX_data_bi_signal(31 downto 28) AND  MUX_data_bit(31 downto 28)) ) AND MUX_enable_signal
 
 ) ;
 
