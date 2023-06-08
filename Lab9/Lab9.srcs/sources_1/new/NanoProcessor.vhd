@@ -37,7 +37,9 @@ entity NanoProcessor is
     reset: in STD_LOGIC;
     overflow: OUT std_logic;
     Zero : out std_logic;
-    reg_7_out:out std_logic_vector(3 downto 0)
+    reg_7_out:out std_logic_vector(3 downto 0);
+    reg_7_seven_seg :out std_logic_vector(6 downto 0);
+    anode: out STD_LOGIC_VECTOR(3 downto 0)
  );
 
 end NanoProcessor;
@@ -58,7 +60,7 @@ component Instruction_decoder
           );
 end component;
 component ROM
-Port ( address : in STD_LOGIC_VECTOR (3 downto 0);   
+Port ( address : in STD_LOGIC_VECTOR (2 downto 0);   
            ins : out STD_LOGIC_VECTOR (11 downto 0));
 end component;
 component Register_Bank
@@ -222,8 +224,8 @@ MUX_8_way_4_bit_0 :MUX_8_way_4_bit port map(
     MUX_data_bit(19 downto 16) =>Data_bus_4,
     MUX_data_bit(23 downto 20) =>Data_bus_5,
     MUX_data_bit(27 downto 24) =>Data_bus_6,
-    MUX_data_bit(31 downto 27) =>Data_bus_7,
-    MUX_output => Register_select_A
+    MUX_data_bit(31 downto 28) =>Data_bus_7,
+    MUX_output => Register_A_out
     
     
 );
@@ -237,8 +239,8 @@ MUX_8_way_4_bit_1 :MUX_8_way_4_bit port map(
     MUX_data_bit(19 downto 16) =>Data_bus_4,
     MUX_data_bit(23 downto 20) =>Data_bus_5,
     MUX_data_bit(27 downto 24) =>Data_bus_6,
-    MUX_data_bit(31 downto 27) =>Data_bus_7,
-    MUX_output => Register_select_B
+    MUX_data_bit(31 downto 28) =>Data_bus_7,
+    MUX_output => Register_B_out
     
     
 );
@@ -258,7 +260,14 @@ Program_Counter_0 : Program_Counter port map
     D  => MUX_2_way_3_bit_OUT ,
     Q  => Memory_select
 );
+LUT_16_7_0 :LUT_16_7 port map 
+(
+    address => Data_bus_7,
+    data => reg_7_seven_seg
+    
+);
+
 
 reg_7_out <= Data_bus_7;
-
+anode <= "1110";
 end Behavioral;

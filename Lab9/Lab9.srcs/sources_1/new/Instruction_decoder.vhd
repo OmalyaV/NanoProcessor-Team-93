@@ -92,13 +92,12 @@ reg_enable_ins<= Instruction_decoder_in(9 downto 7); --to enable a register in t
 immidiate_value_ins <= Instruction_decoder_in(3 downto 0); -- immidiate vallue decoded from the instruction 
 address_to_jump_ins <= Instruction_decoder_in(2 downto 0);-- adress to jump when jump instruction is enable
 jump_flag_signal <=NOT( register_check_for_jump(0) OR register_check_for_jump(1) OR register_check_for_jump(2) OR register_check_for_jump(3));
-
 reg_sel_A(2 downto 0) <=(ins_0_3_bit OR  ins_1_3_bit OR  ins_3_3_bit) AND (reg_sel_A_ins);
 reg_sel_B <= ins_0_3_bit AND (reg_sel_B_ins);
 register_select(5 downto 3) <= reg_sel_A;
 register_select(2 downto 0) <= reg_sel_B;
 register_enable <=( ins_0_3_bit OR ins_1_3_bit OR ins_2_3_bit) AND (reg_enable_ins);
-add_or_sub_select <= (ins_no(0) OR ins_no(1));
+add_or_sub_select <=  ins_no(1);
 immidiate_value <= (ins_2_4_bit) AND immidiate_value_ins;
 load_select<= ins_no(0) OR ins_no(1); 
 jump_flag <= ins_no(3) and jump_flag_signal;

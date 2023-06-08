@@ -33,7 +33,7 @@ use ieee.numeric_std.all;
 --use UNISIM.VComponents.all;
 
 entity ROM is
-    Port ( address : in STD_LOGIC_VECTOR (3 downto 0);
+    Port ( address : in STD_LOGIC_VECTOR (2 downto 0);
            
            ins : out STD_LOGIC_VECTOR (11 downto 0));
 end ROM;
