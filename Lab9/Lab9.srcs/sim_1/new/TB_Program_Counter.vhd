@@ -55,3 +55,4 @@ begin
     Reset <= '1';
     wait;
 end process;
+end;

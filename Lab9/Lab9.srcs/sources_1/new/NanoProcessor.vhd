@@ -124,6 +124,12 @@ Port ( Clk_in : in STD_LOGIC;
        Clk_out : out STD_LOGIC);
 end component;
 
+component LUT_16_7 
+Port ( address : in STD_LOGIC_VECTOR (3 downto 0);
+           
+           data : out STD_LOGIC_VECTOR (6 downto 0));
+end component;
+
 signal Register_enable_signal : STD_LOGIC_VECTOR(2 downto 0);--instruction decoder , register bank
 signal Data_bus_0, Data_bus_1, Data_bus_2,Data_bus_3,Data_bus_4,Data_bus_5,Data_bus_6,Data_bus_7:STD_LOGIC_VECTOR(3 downto 0); --register_bank, muxes
 signal Register_select_A, Register_select_B :STD_LOGIC_VECTOR(2 downto 0); --instruction decoder, mux
