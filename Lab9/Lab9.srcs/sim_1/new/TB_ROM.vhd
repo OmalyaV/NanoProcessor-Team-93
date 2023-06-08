@@ -36,8 +36,37 @@ entity TB_ROM is
 end TB_ROM;
 
 architecture Behavioral of TB_ROM is
-
+component ROM
+Port ( address : in STD_LOGIC_VECTOR (2 downto 0);
+           
+           ins : out STD_LOGIC_VECTOR (11 downto 0));
+           
+end component;
+signal address: STD_LOGIC_VECTOR( 2 downto 0);
+signal ins: STD_LOGIC_VECTOR(11 downto 0);
 begin
+UUT :ROM port map(
+    address => address,
+    ins => ins
+);
+process begin
 
+address <= "000";
+wait for 100ns;
+address <= "001";
+wait for 100ns;
+address <= "010";
+wait for 100ns;
+address <= "011";
+wait for 100ns;
+address <= "100";
+wait for 100ns;
+address <= "101";
+wait for 100ns;
+address <= "110";
+wait for 100ns;
+address <= "111";
+wait for 100ns;
+end process;
 
 end Behavioral;
