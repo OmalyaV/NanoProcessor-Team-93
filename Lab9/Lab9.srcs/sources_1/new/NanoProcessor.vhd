@@ -245,6 +245,14 @@ MUX_2_way_4_bit_0 : MUX_2_way_4_bit port map
     MUX_2_way_4_bit_EN => '1',
     MUX_2_way_4_bit_OUT =>MUX_output_register_Bank
 );
+Program_Counter_0 : Program_Counter port map
+(
+    Clk => Clock_out,
+    Reset =>reset ,
+    D  => MUX_2_way_3_bit_OUT ,
+    Q  => Memory_select
+);
 
+reg_7_out <= Data_bus_7;
 
 end Behavioral;
